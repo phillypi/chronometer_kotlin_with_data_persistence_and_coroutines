@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true"
+    android:keepScreenOn="true"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/chronometer_main_exit_buttom"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="21dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/chronometer_main_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="cronômetro"
+            android:textAllCaps="true"
+            android:letterSpacing="0.5"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/chronometer_to_timer_buttom"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:paddingVertical="22dp"
+            android:paddingStart="8dp"
+            android:background="@drawable/shape_corners_left_radius"
+            android:src="@drawable/ic_hour_glasses"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chronometer_main_name"
+            tools:ignore="RtlSymmetry" />
+
+        <LinearLayout
+            android:id="@+id/chronometer_main_linear_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:gravity="center|bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chronometer_main_name"
+            app:layout_constraintVertical_bias="0.1">
+
+            <TextView
+                android:id="@+id/chronometer_main_text_view_minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/fjalla_one"
+                android:minWidth="95dp"
+                android:shadowColor="@color/black_transparent_darker"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text="00"
+                android:textAlignment="center"
+                android:textColor="@color/red_light"
+                android:textSize="90sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/fjalla_one"
+                android:shadowColor="@color/black_transparent"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text=":"
+                android:textColor="@color/red_light"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/chronometer_main_text_view_seconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/fjalla_one"
+                android:minWidth="95dp"
+                android:shadowColor="@color/black_transparent_darker"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text="00"
+                android:textAlignment="center"
+                android:textColor="@color/red_light"
+                android:textSize="90sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/fjalla_one"
+                android:shadowColor="@color/black_transparent"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text=":"
+                android:textColor="@color/red_light"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/chronometer_main_text_view_millis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/fjalla_one"
+                android:minWidth="60dp"
+                android:shadowColor="@color/black_transparent"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:text="00"
+                android:textColor="@color/red_light"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/chronometer_main_text_view_indicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:gravity="center"
+            android:text="Use o botão LAP para reiniciar a contagem do seu desempenho"
+            android:textColor="@color/gray_light2"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chronometer_main_linear_layout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_chronometer_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chronometer_main_text_view_indicator"
+            tools:listitem="@layout/item_fragment_chronometer_lap" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/chronometer_main_img_view_lap_buttom"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_chronometer_lap"
+            app:layout_constraintBottom_toBottomOf="@+id/chronometer_play_pause_buttom"
+            app:layout_constraintEnd_toStartOf="@+id/chronometer_play_pause_buttom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/chronometer_play_pause_buttom"
+            app:layout_constraintVertical_bias="1"
+            app:tint="@color/red_light" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/chronometer_play_pause_buttom"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="100dp"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:src="@drawable/ic_chronometer_main_play"
+            android:tint="@color/red_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_chronometer_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/chronometer_main_reset_buttom"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_chronometer_reset"
+            app:layout_constraintBottom_toBottomOf="@+id/chronometer_play_pause_buttom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chronometer_play_pause_buttom"
+            app:layout_constraintTop_toTopOf="@+id/chronometer_play_pause_buttom"
+            app:layout_constraintVertical_bias="1"
+            app:tint="@color/red_light" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
